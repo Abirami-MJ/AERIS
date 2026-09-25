@@ -1,0 +1,161 @@
+# ======================================================
+# AERIS - .gitignore
+# ======================================================
+
+############################
+# Python
+############################
+__pycache__/
+*.py[cod]
+*$py.class
+
+############################
+# Virtual Environment
+############################
+aeris_env/
+venv/
+.venv/
+env/
+ENV/
+
+############################
+# Jupyter Notebook
+############################
+.ipynb_checkpoints/
+
+############################
+# VS Code
+############################
+.vscode/
+
+############################
+# PyCharm
+############################
+.idea/
+
+############################
+# OS Files
+############################
+.DS_Store
+Thumbs.db
+
+############################
+# Environment Variables
+############################
+aeris_env/
+.env
+.env.*
+
+############################
+# Logs
+############################
+*.log
+logs/
+
+############################
+# Model Files
+############################
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+############################
+# Dataset Files
+############################
+*.csv
+*.txt
+*.xlsx
+*.xls
+*.jsonl
+*.zip
+*.rar
+*.7z
+*.npz
+*.pkl
+*.pickle
+
+############################
+# Generated Outputs
+############################
+outputs/
+results/
+predictions/
+plots/
+figures/
+images/
+checkpoints/
+runs/
+
+############################
+# SHAP Outputs
+############################
+shap_outputs/
+shap_plots/
+explanations/
+
+############################
+# Evidence Objects
+############################
+evidence_objects/
+evidence/
+
+############################
+# TensorBoard
+############################
+tensorboard/
+events.out.tfevents.*
+
+############################
+# Python Build
+############################
+build/
+dist/
+*.egg-info/
+
+############################
+# Cache
+############################
+.cache/
+.pytest_cache/
+.mypy_cache/
+
+############################
+# Temporary Files
+############################
+*.tmp
+*.temp
+*.bak
+*.swp
+
+############################
+# Mac/Linux Hidden Files
+############################
+.AppleDouble
+.LSOverride
+
+# Large generated JSON files
+NTSB_Evidence_Object.json
+ntsb_metadata.json
+
+# Evidence Objects
+evidence_objects/
+evidence/
+
+# Generated JSON
+*.json
+
+aeris_env/
+
+*.npy
+*.index
+*.pkl
+*.npz
+
+Fusion_Evidence/
+
+NTSB_Evidence_Object.json
+ntsb_metadata.json
+
+outputs/
+results/

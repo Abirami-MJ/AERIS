@@ -276,17 +276,21 @@ single_pred_rul = rul_scaler.inverse_transform(single_pred_scaled).flatten()[0]
 actual_rul = y_test[sample_window_id]  # from your loaded .npz test set
 confidence = round(max(1 - abs(single_pred_rul - actual_rul) / 125, 0), 3)
 
+# Convert top SHAP features into a probable-cause subsystem + FAISS query
+subsystem, faiss_query = shap_to_query(top_5_features)
+
 evidence_object = {
     "source": "CMAPSS",
     "prediction": {
         "RUL": round(float(single_pred_rul), 2),
-        "anomaly_score": None   # still pending your anomaly-detection logic
+        "anomaly_score": None
     },
     "confidence": confidence,
     "shap_top_features": top_5_features,
+    "probable_cause_subsystem": subsystem,      # <-- new field
+    "faiss_query": faiss_query,                 # <-- new field
     "timestamp_window": f"test_window_{sample_window_id}"
 }
-
 
 
 print("\nFINAL Evidence Object (CMAPSS):")

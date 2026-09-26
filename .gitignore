@@ -159,3 +159,9 @@ ntsb_metadata.json
 
 outputs/
 results/
+
+#files to be ignored
+NTSB_Evidence_Object.csv
+NTSB_Evidence_Object.json
+ntsb_metadata.csv
+ntsb_metadata.json

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AERIS — Phase 1 Investigation Report</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f5f7;
+    margin: 0;
+    padding: 40px 20px;
+    color: #222;
+  }
+  .container { max-width: 880px; margin: 0 auto; }
+  .header { text-align: center; margin-bottom: 32px; }
+  .header h1 { font-size: 28px; margin-bottom: 4px; }
+  .header p { color: #666; font-size: 14px; }
+
+  .risk-banner {
+    background: #fff3cd;
+    border-left: 6px solid #b8860b;
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .risk-banner .risk-label { font-size: 14px; color: #555; text-transform: uppercase; letter-spacing: 1px; }
+  .risk-banner .risk-value { font-size: 32px; font-weight: 700; color: #b8860b; }
+  .risk-banner .confidence { text-align: right; }
+  .risk-banner .confidence .num { font-size: 26px; font-weight: 700; color: #b8860b; }
+  .risk-banner .confidence .lbl { font-size: 12px; color: #666; }
+
+  .subsystem-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .subsystem-card .title { font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+  .subsystem-card .value { font-size: 22px; font-weight: 600; margin: 4px 0; }
+  .subsystem-card .source { font-size: 13px; color: #666; }
+
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .evidence-card {
+    background: white;
+    border-radius: 8px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border-top: 4px solid #444;
+  }
+  .evidence-card.cmapss { border-top-color: #2e7d32; }
+  .evidence-card.ntsb { border-top-color: #8b1e3f; }
+  .evidence-card.ngafid { border-top-color: #1f6f8b; }
+  .evidence-card h3 { font-size: 15px; margin: 0 0 10px 0; }
+  .evidence-card .row { font-size: 13px; margin-bottom: 6px; display: flex; justify-content: space-between; gap: 8px; }
+  .evidence-card .row .k { color: #777; }
+  .evidence-card .row .v { font-weight: 600; text-align: right; }
+  .evidence-card .desc { font-size: 12.5px; color: #555; margin-top: 10px; line-height: 1.5; border-top: 1px solid #eee; padding-top: 10px; }
+
+  .note-box {
+    background: #fff8e1;
+    border: 1px solid #f0d98c;
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-size: 13px;
+    color: #6b5500;
+    margin-bottom: 20px;
+  }
+
+  .footer { text-align: center; font-size: 12px; color: #999; margin-top: 30px; }
+  .footer a { color: #888; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>AERIS — Phase 1 Investigation Report</h1>
+    <p>Explainable Reasoning and Investigation System for Aerospace Maintenance</p>
+    <p>Generated: 2026-09-26 14:05:59 UTC</p>
+  </div>
+
+  <div class="risk-banner">
+    <div>
+      <div class="risk-label">Aircraft Risk Level</div>
+      <div class="risk-value">Medium Risk</div>
+    </div>
+    <div class="confidence">
+      <div class="num">98.5%</div>
+      <div class="lbl">Overall Confidence (Belief: 98%–99%)</div>
+    </div>
+  </div>
+
+  <div class="subsystem-card">
+    <div class="title">Most Probable Fault Subsystem</div>
+    <div class="value">High-Pressure Compressor</div>
+    <div class="source">Primary evidence source: CMAPSS</div>
+  </div>
+
+  
+    <div class="note-box">
+      <strong>Note on evidence sources:</strong> An inter-source conflict of
+      0.54 was detected during fusion, indicating the underlying
+      evidence sources describe different aircraft cases in this Phase 1
+      prototype. See the technical appendix for details.
+    </div>
+
+  <div class="evidence-grid">
+
+    <div class="evidence-card cmapss">
+      <h3>🔧 CMAPSS — Sensor Evidence</h3>
+      <div class="row"><span class="k">Predicted RUL</span><span class="v">70.43 cycles</span></div>
+      <div class="row"><span class="k">Confidence</span><span class="v">95.7%</span></div>
+      <div class="row"><span class="k">Inferred Subsystem</span><span class="v">High-Pressure Compressor</span></div>
+      <div class="desc">Top contributing sensors (SHAP): Ps30, NRf, phi, T50, P30</div>
+    </div>
+
+    <div class="evidence-card ntsb">
+      <h3>📄 NTSB — Historical Investigation</h3>
+      <div class="row"><span class="k">Matched Report</span><span class="v">ENG19IA013</span></div>
+      <div class="row"><span class="k">Aircraft</span><span class="v">Boeing 737</span></div>
+      <div class="row"><span class="k">Similarity</span><span class="v">57.0%</span></div>
+      <div class="desc">A No. 1 (left) engine high pressure compressor stage 2 blade separation. The blade separated due to a mixed-mode fatigue crack that originated on a blade disk post and was initiate...</div>
+    </div>
+
+    <div class="evidence-card ngafid">
+      <h3>✈️ NGAFID — Flight Evidence</h3>
+      <div class="row"><span class="k">Failure Risk</span><span class="v">61.4%</span></div>
+      <div class="row"><span class="k">Diagnosed Subsystem</span><span class="v">Rocker / Valvetrain</span></div>
+      <div class="row"><span class="k">Diagnosis Confidence</span><span class="v">41.5%</span></div>
+      <div class="desc">Top anomaly sensors: E1 OilP_seg5_std, E1 OilP_seg3_mean, FFlow_per_RPM_seg5</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Full technical evidence objects and fusion mass distributions are available in the accompanying JSON appendix.<br>
+    AERIS Phase 1 Prototype — Sources combined: CMAPSS, NTSB, NGAFID
+  </div>
+
+</div>
+</body>
+</html>
